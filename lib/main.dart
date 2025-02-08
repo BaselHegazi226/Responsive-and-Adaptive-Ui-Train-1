@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
             size: 24,
           ),
         ),
+        body: ListView(
+          children: [],
+        ),
       ),
     );
   }
