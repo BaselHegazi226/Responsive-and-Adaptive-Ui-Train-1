@@ -9,7 +9,13 @@ class CustomSliverList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList.builder(
       itemBuilder: (context, index) {
-        return CustomSliverListItem();
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 8,
+          ),
+          child: CustomSliverListItem(),
+        );
       },
     );
   }

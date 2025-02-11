@@ -5,14 +5,13 @@ class CustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.sizeOf(context);
     return AspectRatio(
-      aspectRatio: size.height * .18 / 200,
+      aspectRatio: 1,
       child: Container(
-        margin: EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 8,
-        ),
+        // margin: EdgeInsets.symmetric(
+        //   horizontal: 8,
+        //   vertical: 8,
+        // ),
         // height: size.height * .18,
         // width: 200,
         decoration: BoxDecoration(

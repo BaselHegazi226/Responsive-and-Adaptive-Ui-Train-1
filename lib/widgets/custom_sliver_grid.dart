@@ -13,7 +13,13 @@ class MobileCustomGrid extends StatelessWidget {
         crossAxisCount: 2,
       ),
       itemBuilder: (context, index) {
-        return CustomItem();
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 8,
+          ),
+          child: CustomItem(),
+        );
       },
     );
   }
@@ -32,7 +38,11 @@ class TabletCustomListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         physics: BouncingScrollPhysics(),
         itemBuilder: (context, index) {
-          return CustomItem();
+          return Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 8,
+              ),
+              child: CustomItem());
         },
       ),
     );

@@ -6,7 +6,7 @@ class CustomDrawerBody extends StatelessWidget {
   const CustomDrawerBody({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         DrawerHeader(
           child: Icon(
