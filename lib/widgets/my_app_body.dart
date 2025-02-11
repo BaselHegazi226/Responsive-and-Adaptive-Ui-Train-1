@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:resposive_adaptive_ui_train_1/widgets/tablet_layout.dart';
 
 import 'custom_drawer.dart';
-import 'custom_sliver_grid.dart';
-import 'custom_sliver_list.dart';
+import 'desktop_layout.dart';
+import 'mobile_layout.dart';
 
 class MyAppBody extends StatefulWidget {
   const MyAppBody({super.key});
@@ -15,6 +16,7 @@ class _MyAppBodyState extends State<MyAppBody> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    //var size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       key: scaffoldKey,
@@ -24,6 +26,7 @@ class _MyAppBodyState extends State<MyAppBody> {
         leading: IconButton(
           onPressed: () {
             scaffoldKey.currentState!.openDrawer();
+            setState(() {});
           },
           icon: Icon(
             Icons.menu_outlined,
@@ -33,19 +36,21 @@ class _MyAppBodyState extends State<MyAppBody> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(
-          right: 8,
-          left: 8,
-          top: 16,
-          bottom: 8,
-        ),
-        child: CustomScrollView(
-          slivers: [
-            CustomSliverGrid(),
-            CustomSliverList(),
-          ],
-        ),
-      ),
+          padding: EdgeInsets.only(
+            right: 8,
+            left: 8,
+            top: 16,
+            bottom: 8,
+          ),
+          child: LayoutBuilder(builder: (context, constraints) {
+            if (constraints.maxWidth > 900) {
+              return DesktopLayout();
+            } else if (constraints.maxWidth < 600) {
+              return MobileLayout();
+            } else {
+              return TabletLayout();
+            }
+          })),
     );
   }
 }
