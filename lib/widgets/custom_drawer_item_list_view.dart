@@ -11,12 +11,12 @@ class CustomDrawerItemListView extends StatelessWidget {
       icon: Icon(Icons.dashboard),
     ),
     CustomDrawerItemModel(
-      title: 'A B O U T',
-      icon: Icon(Icons.info),
-    ),
-    CustomDrawerItemModel(
       title: 'S E T T I N G',
       icon: Icon(Icons.settings),
+    ),
+    CustomDrawerItemModel(
+      title: 'A B O U T',
+      icon: Icon(Icons.info),
     ),
     CustomDrawerItemModel(
       title: 'L O G O U T',
